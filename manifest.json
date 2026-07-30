@@ -1,7 +1,7 @@
 {
 	"id": "collapse-sidebar-on-open",
 	"name": "Collapse Sidebar on Open",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Collapses the sidebar after you open a file from the File Explorer.",
 	"author": "Chandan Chauhan",
