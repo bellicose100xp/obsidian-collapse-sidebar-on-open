@@ -2,22 +2,11 @@
 
 Obsidian plugin. Click a file in the File Explorer and the sidebar collapses once the file opens.
 
-Works for any file type the vault can open, including `.html` files handled by the HTML Reader plugin.
-
-## What it leaves alone
-
-- Folder rows. They still just expand and collapse.
-- Ctrl/Cmd/Shift/Alt clicks, which mean "new tab" or "multi-select", so the sidebar stays put.
-- Inline rename.
-- Middle and right clicks.
-
-Applies to whichever sidebar the File Explorer is docked in, left or right.
+Works for any file type the vault can open, including `.html` files handled by the HTML Reader plugin, and applies to whichever sidebar the File Explorer is docked in.
 
 ## Settings
 
-**Collapse below this window width** sets a pixel width, defaulting to 1400. The sidebar only collapses when the window is narrower than that, so a wide window keeps the File Explorer visible and screen space stays useful when the window is small. Set it to 0 to collapse at every width.
-
-Because the default is 1400, nothing happens on a window wider than that until you raise the number.
+**Collapse below this window width** sets a pixel width, defaulting to 1400. The sidebar collapses only when the window is narrower than that. Set it to 0 to collapse at every width.
 
 ## Install with BRAT
 
@@ -41,7 +30,7 @@ obsidian://brat?plugin=bellicose100xp/obsidian-collapse-sidebar-on-open
 Appending a tag to that link freezes the install to one release, so BRAT stops pulling newer ones:
 
 ```
-obsidian://brat?plugin=bellicose100xp/obsidian-collapse-sidebar-on-open&version=1.0.1
+obsidian://brat?plugin=bellicose100xp/obsidian-collapse-sidebar-on-open&version=1.1.0
 ```
 
 The same field is available in the Add-plugin dialog. Switch between a pinned version and the latest with the edit button in Settings → BRAT.
@@ -67,5 +56,3 @@ git push origin master --follow-tags
 ```
 
 `npm version` bumps `package.json`, syncs `manifest.json` and `versions.json`, commits, and tags. Pushing the tag triggers a workflow that builds the plugin and publishes a GitHub release with `main.js` and `manifest.json` attached, which is what BRAT reads.
-
-Let npm run the bump script. Calling `version-bump.mjs` directly writes an `undefined` entry into `versions.json`, since it reads a variable that only npm sets.
