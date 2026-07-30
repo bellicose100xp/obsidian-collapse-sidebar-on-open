@@ -13,6 +13,12 @@ Works for any file type the vault can open, including `.html` files handled by t
 
 Applies to whichever sidebar the File Explorer is docked in, left or right.
 
+## Settings
+
+**Collapse below this window width** sets a pixel width, defaulting to 1400. The sidebar only collapses when the window is narrower than that, so a wide window keeps the File Explorer visible and screen space stays useful when the window is small. Set it to 0 to collapse at every width.
+
+Because the default is 1400, nothing happens on a window wider than that until you raise the number.
+
 ## Install with BRAT
 
 This plugin is not in the community catalog, so install it with [BRAT](https://github.com/TfTHacker/obsidian42-brat), which installs plugins straight from GitHub releases and keeps them updated.
