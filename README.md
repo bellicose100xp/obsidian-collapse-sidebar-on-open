@@ -6,7 +6,9 @@ Works for any file type the vault can open, including `.html` files handled by t
 
 ## Settings
 
-**Collapse below this window width** sets a pixel width, defaulting to 1400. The sidebar collapses only when the window is narrower than that. Set it to 0 to collapse at every width.
+**Left sidebar** and **Right sidebar** choose which sidebars the plugin collapses. Both are on by default. Turn one off and that sidebar stays open until you close it yourself.
+
+**Collapse below this window width** sets a pixel width, defaulting to 1400. A sidebar collapses only when the window is narrower than that. Set it to 0 to collapse at every width.
 
 ## Install with BRAT
 

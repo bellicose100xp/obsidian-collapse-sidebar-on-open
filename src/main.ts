@@ -58,6 +58,7 @@ export default class CollapseSidebarOnOpenPlugin extends Plugin {
 
 		const dock = this.sidedockContaining(fileTitle);
 		if (!dock || dock.collapsed) return;
+		if (!this.isEnabledFor(dock)) return;
 
 		window.setTimeout(() => {
 			if (!dock.collapsed) dock.collapse();
@@ -72,6 +73,14 @@ export default class CollapseSidebarOnOpenPlugin extends Plugin {
 		const { maxWidth } = this.settings;
 		if (!Number.isFinite(maxWidth) || maxWidth <= 0) return true;
 		return activeWindow.innerWidth < maxWidth;
+	}
+
+	/** Whether the user turned the plugin on for this side. */
+	private isEnabledFor(dock: WorkspaceSidedock): boolean {
+		const { leftSplit, rightSplit } = this.app.workspace;
+		if (dock === leftSplit) return this.settings.collapseLeft;
+		if (dock === rightSplit) return this.settings.collapseRight;
+		return false;
 	}
 
 	/** Which sidebar the clicked row belongs to, if any. */
