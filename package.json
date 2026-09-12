@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-collapse-sidebar-on-open",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Collapses the sidebar after you open a file from the File Explorer.",
 	"main": "main.js",
 	"type": "module",
