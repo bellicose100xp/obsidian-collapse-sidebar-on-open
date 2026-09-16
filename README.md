@@ -1,6 +1,6 @@
 # Collapse Sidebar on Open
 
-Obsidian plugin. Click a file in the File Explorer and the sidebar collapses once the file opens.
+Obsidian plugin. Click a file in the File Explorer and the sidebar collapses once the file opens. Picking a file in the quick switcher or command palette collapses it too.
 
 Works for any file type the vault can open, including `.html` files handled by the HTML Reader plugin, and applies to whichever sidebar the File Explorer is docked in.
 
@@ -9,6 +9,8 @@ Works for any file type the vault can open, including `.html` files handled by t
 **Left sidebar** and **Right sidebar** choose which sidebars the plugin collapses. Both are on by default. Turn one off and that sidebar stays open until you close it yourself.
 
 **Collapse below this window width** sets a pixel width, defaulting to 1400. A sidebar collapses only when the window is narrower than that. Set it to 0 to collapse at every width.
+
+**Quick switcher and other dialogs** is on by default. Choosing a file in the quick switcher, the command palette, or any other dialog collapses the enabled sidebars, subject to the same width limit. Turn it off to collapse only on File Explorer clicks.
 
 ## Install with BRAT
 

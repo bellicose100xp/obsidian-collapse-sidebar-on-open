@@ -8,12 +8,15 @@ export interface CollapseSidebarSettings {
 	collapseRight: boolean;
 	/** Only collapse when the window is narrower than this, in pixels. */
 	maxWidth: number;
+	/** Also collapse after a file is opened from the quick switcher or another dialog. */
+	collapseFromDialogs: boolean;
 }
 
 export const DEFAULT_SETTINGS: CollapseSidebarSettings = {
 	collapseLeft: true,
 	collapseRight: true,
 	maxWidth: 1400,
+	collapseFromDialogs: true,
 };
 
 export class CollapseSidebarSettingTab extends PluginSettingTab {
@@ -29,7 +32,7 @@ export class CollapseSidebarSettingTab extends PluginSettingTab {
 				items: [
 					{
 						name: 'Left sidebar',
-						desc: 'Collapse the left sidebar after opening a file from it. When off, the left sidebar is left alone.',
+						desc: 'Collapse the left sidebar after a file is opened. When off, the left sidebar is left alone.',
 						control: {
 							type: 'toggle',
 							key: 'collapseLeft',
@@ -38,7 +41,7 @@ export class CollapseSidebarSettingTab extends PluginSettingTab {
 					},
 					{
 						name: 'Right sidebar',
-						desc: 'Collapse the right sidebar after opening a file from it. When off, the right sidebar is left alone.',
+						desc: 'Collapse the right sidebar after a file is opened. When off, the right sidebar is left alone.',
 						control: {
 							type: 'toggle',
 							key: 'collapseRight',
@@ -61,6 +64,15 @@ export class CollapseSidebarSettingTab extends PluginSettingTab {
 						Number.isFinite(value) && value >= 0
 							? undefined
 							: 'Enter a width of 0 or more.',
+				},
+			},
+			{
+				name: 'Quick switcher and other dialogs',
+				desc: 'Also collapse the enabled sidebars when a file is picked in the quick switcher, the command palette, or another dialog. Clicking in the File Explorer always collapses.',
+				control: {
+					type: 'toggle',
+					key: 'collapseFromDialogs',
+					defaultValue: DEFAULT_SETTINGS.collapseFromDialogs,
 				},
 			},
 		];
